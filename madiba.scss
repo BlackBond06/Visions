@@ -1,0 +1,2378 @@
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Dancing+Script:wght@700&family=Playfair+Display:wght@700&family=Poppins:wght@100&family=Roboto:wght@400;500&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+:root {
+  --primary-color: #03071e;
+  --secondary-color: orangered;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+// Navigation Bar styling
+nav {
+  width: 100vw;
+  position: fixed;
+  z-index: 999;
+  height: 5rem;
+  line-height: 5rem;
+  background: transparent;
+
+  .nav_content {
+    position: relative;
+    max-width: 1300px;
+    padding: 0 1rem;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .logo {
+      color: #fff;
+      font-size: 1.5rem;
+      font-weight: 600;
+
+      span {
+        color: #fb8500;
+      }
+    }
+
+    input {
+      display: none;
+    }
+
+    .btn {
+      color: #fff;
+      font-size: 20px;
+      cursor: pointer;
+      display: none;
+    }
+
+    .cancel-btn {
+      position: absolute;
+      right: 30px;
+      top: 10px;
+    }
+
+    .nav_links {
+      display: inline-flex;
+      list-style: none;
+
+      .fa-phone {
+        transform: rotate(90deg);
+      }
+
+      .custom {
+        background: #fb8500;
+        padding: 29px 15px;
+        transition: all 200ms ease-in-out;
+      }
+
+      .custom:hover {
+        background-color: var(--primary-color);
+      }
+
+      .underline {
+        transition: all 200ms ease-in-out;
+      }
+
+      .underline:hover {
+        border-bottom: 3px solid #fff;
+        color: #fb8500;
+      }
+
+      li:hover .hist-drop,
+      li:hover .branch_drop,
+      li:hover .mega-box,
+      li:hover .more_drop {
+        opacity: 1;
+        visibility: visible;
+        transition: all 200ms ease-in-out;
+      }
+
+      .mobile-item {
+        display: none;
+      }
+
+      .branch-mobile {
+        display: none;
+      }
+
+      .more-mobile {
+        display: none;
+      }
+
+      .hist-drop {
+        position: absolute;
+        background: var(--primary-color);
+        list-style: none;
+        max-width: 180px;
+        top: 5rem;
+        line-height: 3rem;
+        opacity: 0;
+        visibility: hidden;
+
+        li {
+          border-top: 1px solid white;
+        }
+
+        li a {
+          width: 100%;
+          display: block;
+          padding: 0 0 0 10px;
+          font-weight: 400px;
+        }
+
+        li a:hover {
+          color: #fb8500;
+        }
+      }
+
+      .branch_drop {
+        background: var(--primary-color);
+        max-width: 150px;
+        position: absolute;
+        top: 80px;
+        line-height: 45px;
+        list-style: none;
+        opacity: 0;
+        visibility: hidden;
+
+        li {
+          border-top: 1px solid white;
+        }
+
+        li a {
+          width: 100%;
+          display: block;
+          padding: 0 0 0 10px;
+          font-weight: 400px;
+        }
+
+        li a:hover {
+          color: #fb8500;
+        }
+      }
+
+      .more_drop {
+        background: var(--primary-color);
+        max-width: 150px;
+        position: absolute;
+        top: 80px;
+        line-height: 45px;
+        list-style: none;
+        opacity: 0;
+        visibility: hidden;
+
+        li {
+          border-top: 1px solid white;
+        }
+
+        li a {
+          width: 100%;
+          display: block;
+          padding: 0 0 0 10px;
+          font-weight: 400px;
+        }
+
+        li a:hover {
+          color: #fb8500;
+        }
+      }
+
+      .mega-box {
+        position: absolute;
+        top: 5rem;
+        width: 100%;
+        padding: 0 30px;
+        left: 0px;
+        opacity: 0;
+        visibility: hidden;
+
+        .content {
+          background: var(--primary-color);
+          padding: 25px 20px;
+          display: flex;
+          width: 100%;
+          justify-content: space-between;
+
+          .row img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+
+          .row header {
+            color: #fff;
+            font-size: 1.5rem;
+            font-weight: bold;
+          }
+
+          .row:nth-child(1),
+          .row:nth-child(2) {
+            border-left: 0px;
+          }
+
+          .row {
+            width: calc(33.3% - 30px);
+            line-height: 45px;
+
+            .mega-links {
+              list-style: none;
+              margin-left: -20px;
+              border-left: 1px solid rgba(255, 255, 255, 0.2);
+
+              li {
+                padding: 0 20px;
+              }
+
+              li a {
+                padding: 0 20px;
+                font-size: 14px;
+                font-weight: 500px;
+                display: block;
+              }
+
+              li a:hover {
+                color: #fb8500;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .nav_links a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 600;
+      margin-right: 1.5rem;
+    }
+  }
+
+  // End of Navigation Bar Styling
+}
+
+.nav_scrolled {
+  --background-color: #fff;
+  --scroll-color: black;
+
+  background: var(--background-color);
+  box-shadow: 0 3px 20px rgba($color: black, $alpha: 0.2);
+  transition: background-color 250ms ease;
+
+  .nav_content .logo {
+    color: var(--primary-color);
+    font-weight: 600;
+  }
+
+  .nav_content .btn .fa-bars {
+    color: #fb8500;
+  }
+
+  .nav_content .nav_links a {
+    color: var(--scroll-color);
+    font-weight: 600;
+  }
+
+  .nav_content .nav_links .hist-drop a {
+    color: #fff;
+  }
+
+  .nav_content .nav_links .branch_drop a {
+    color: #fff;
+  }
+
+  .nav_content .nav_links .more_drop a {
+    color: #fff;
+  }
+  .nav_content .nav_links .branch_drop a {
+    color: #fff;
+  }
+
+  .nav_content .nav_links .mega-box .content .row .mega-links a {
+    color: #fff;
+  }
+}
+
+// Hero Area styling
+.Landing_page {
+  max-width: 100vw;
+  position: relative;
+  height: 41.5rem;
+  padding: 200px 300px;
+
+  .hero_container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .hero_text {
+      z-index: 1;
+      color: #fff;
+      h1 {
+        font-size: 3rem;
+        text-transform: uppercase;
+        font-weight: 900;
+        margin-top: 3rem;
+      }
+
+      span {
+        color: #fb8500;
+      }
+
+      p {
+        margin-top: 1rem;
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+        max-inline-size: 35rem;
+        background: rgba(0, 0, 0, 0.1);
+        padding: 0px 0.5rem;
+      }
+    }
+
+    .media_icons {
+      position: absolute;
+      right: 2rem;
+      display: flex;
+      flex-direction: column;
+      margin-top: 5rem;
+      transition: 0.3s ease;
+    }
+
+    .media_icons a {
+      color: #fff;
+      font-size: 1.2rem;
+    }
+
+    .media_icons a:not(:last-child) {
+      margin-bottom: 1.1rem;
+    }
+
+    .media_icons a:hover {
+      transform: scale(1.3);
+    }
+  }
+
+  .consultation {
+    display: flex;
+    align-items: center;
+
+    .consult_link {
+      width: 200px;
+      border-bottom: 1px solid #fb8500;
+    }
+
+    .consult_link a {
+      text-decoration: none;
+      font-size: 1rem;
+      color: #fb8500;
+      font-weight: bold;
+    }
+
+    .consult_style {
+      margin-top: 1.5rem;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: 1px solid #fb8500;
+      margin-left: -1.4rem;
+    }
+  }
+
+  .hero_container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    margin-bottom: 0;
+  }
+}
+
+//Intro section styling
+
+.Introduction {
+  max-width: 100vw;
+  position: relative;
+  height: 30rem;
+  display: flex;
+  // background: #f1f1f1;
+  margin-bottom: 13rem;
+
+  .intro_About_us {
+    color: #fff;
+    background: black;
+    height: 23.5rem;
+    padding: 2rem 1rem;
+
+    .intro_Caption {
+      font-size: 2rem;
+      font-family: "Playfair Display", serif;
+      font-weight: 700;
+    }
+
+    .intro_btn {
+      padding: 20px 15px;
+      margin-top: 1rem;
+      border: none;
+      outline: 2px solid var(--primary-color);
+      outline-offset: -4px;
+    }
+
+    .intro_btn a {
+      text-decoration: none;
+      color: black;
+      font-size: 1.2rem;
+      font-family: "Playfair Display", serif;
+    }
+  }
+
+  .intro_container {
+    width: 100%;
+    margin-top: 3rem;
+    padding: 100px 20px;
+   
+
+    .bull_one {
+      background: rgba(0, 0, 0, 0.3);
+      position: absolute;
+      height: 50px;
+      width: 50px;
+      top: 30px;
+      right: 44%;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: #fb8500;
+      font-size: 2rem;
+      font-family: "Abril Fatface", cursive;
+    }
+
+    .date {
+      color: black;
+      position: absolute;
+      top: 80px;
+      right: 40%;
+      font-weight: 900;
+      font-size: 2rem;
+      font-family: "Playfair Display", serif;
+      text-transform: uppercase;
+    }
+
+    .portfolio {
+      width: 100%;
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-gap: 5px;
+      grid-template-rows: 200px;
+      border: 3px solid rgba(0, 0, 0, 0.4);
+      outline: 5px solid var(--primary-color);
+      outline-offset: -10px;
+      padding: 10px;
+
+      .courtroom_hrs {
+        position: relative;
+
+        .sub_container {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+          font-size: 0.6rem;
+          color: #fff;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          background-image: linear-gradient(
+            to right,
+            rgba(0, 0, 0, 1),
+            rgba(0, 0, 0, 0)
+          );
+          padding: 0 1rem;
+        }
+      }
+
+      .client_assisited {
+        position: relative;
+
+        .client_container {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+          font-size: 0.6rem;
+          color: #fff;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          background-image: linear-gradient(
+            to right,
+            rgba(0, 0, 0, 1),
+            rgba(0, 0, 0, 0)
+          );
+          padding: 0 2rem;
+        }
+      }
+
+      .experience {
+        position: relative;
+
+        .exp_container {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+          font-size: 0.6rem;
+          color: #fff;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          background-image: linear-gradient(
+            to right,
+            rgba(0, 0, 0, 1),
+            rgba(0, 0, 0, 0)
+          );
+          padding: 0 1.3rem;
+        }
+      }
+
+      .awards {
+        position: relative;
+
+        .award_container {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+          font-size: 0.6rem;
+          color: #fff;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-image: linear-gradient(
+            to right,
+            rgba(0, 0, 0, 1),
+            rgba(0, 0, 0, 0)
+          );
+        }
+
+        .award_container a {
+          color: #fff;
+          text-decoration: none;
+        }
+      }
+    }
+    .portfolio .border_right {
+      border-right: 1px solid rgba(255, 255, 255, 0.4);
+      padding-right: 12px;
+    }
+
+    .portfolio > div {
+      width: calc(100% \4);
+      height: auto;
+    }
+
+    .portfolio > div img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+// Client section styling
+.client_section {
+  padding-top: 1rem;
+  max-width: 100vw;
+  height: auto;
+  position: relative;
+
+  .Bull_two {
+    background: rgba(0, 0, 0, 0.3);
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    top: -3rem;
+    left: 50%;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    color: #fb8500;
+    font-size: 2rem;
+    font-family: "Abril Fatface", cursive;
+  }
+
+  h1 {
+    text-align: center;
+    font-size: 2rem;
+    font-family: "Playfair Display", serif;
+  }
+
+  .client_box {
+    position: relative;
+    width: 50rem;
+    margin: 0 auto;
+    margin-top: 50px;
+
+    .key-points {
+      width: 100%;
+
+      .keypoints-title {
+        width: 100%;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+
+        .keypoints-btn {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 6rem;
+          border: none;
+          font-family: "Playfair Display", serif;
+          font-weight: 700;
+          font-size: 1.7rem;
+          cursor: pointer;
+          background: transparent;
+          transition: all 200ms ease-in-out;
+
+          span {
+            display: grid;
+            place-items: center;
+          }
+
+          .minus-icon {
+            display: none;
+          }
+        }
+
+        .keypoints-btn:hover {
+          background: var(--primary-color);
+          color: #fff;
+        }
+      }
+
+      .keypoints-text {
+        display: none;
+      }
+
+      .keypoints-text p {
+        font-weight: bold;
+        padding: 1rem;
+        margin-bottom: 0;
+      }
+    }
+
+    .show-text .keypoints-title .keypoints-btn .plus-icon {
+      display: none;
+    }
+    .show-text .keypoints-title .keypoints-btn .minus-icon {
+      display: inline-flex;
+    }
+
+    .show-text .keypoints-text {
+      display: block;
+    }
+
+    .fas {
+      position: absolute;
+      right: 2%;
+      font-size: 1.2rem;
+      
+    }
+  }
+}
+
+// Practice Areas styling
+
+.practice_areas {
+  margin-top: 10rem;
+  background: var(--primary-color);
+  max-width: 100vw;
+  height: 45rem;
+  position: relative;
+
+  .pract_container {
+    width: 100%;
+    height: auto;
+
+    .Top_Area {
+      width: 100%;
+      padding-top: 5rem;
+
+      .Bull_three {
+        background: rgba(0, 0, 0, 0.3);
+        position: absolute;
+        height: 50px;
+        width: 50px;
+        top: 50px;
+        left: 48%;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        color: #fb8500;
+        font-size: 2rem;
+        font-family: "Abril Fatface", cursive;
+      }
+
+      .Top_Area_Text {
+        max-width: 55rem;
+        margin: 0 auto;
+        color: #fff;
+        text-align: center;
+        padding-top: 30px;
+
+        h1 {
+          font-family: "Playfair Display", serif;
+          font-weight: 700;
+          font-size: 2rem;
+          color: #fff;
+        }
+      }
+    }
+
+    .area_container {
+      width: 100%;
+      height: auto;
+      display: grid;
+      place-items: center;
+      margin-top: 3rem;
+
+      .content_info {
+        width: 58rem;
+
+        .content_header {
+          width: 20rem;
+          height: 70px;
+          display: flex;
+          margin: 0 auto;
+
+          h1 {
+            width: 50%;
+            cursor: pointer;
+            font-size: 1.2rem;
+          }
+          span {
+            border-bottom: 3px solid grey;
+            color: grey;
+          }
+        }
+
+        .content_text {
+          position: relative;
+          width: 100%;
+          height: 25rem;
+
+          .sub_text {
+            position: absolute;
+            width: 100%;
+
+            p {
+              margin-top: 20px;
+            }
+          }
+
+          .sub_text:nth-child(2) {
+            display: none;
+          }
+
+          .grid_container {
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 100px 100px;
+            grid-gap: 5px;
+          }
+
+          .grid_container > div {
+            background: #1d213d;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            padding-left: 10px;
+
+            h3 {
+              font-size: 0.9rem;
+              padding-left: 10px;
+            }
+          }
+
+          .grid_container > div img {
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Styling for call_back
+
+.call_back {
+  max-width: 100vw;
+  position: relative;
+  height: 20rem;
+  background: url(/Visions/call.jpg) center/ cover no-repeat;
+  background-attachment: fixed;
+
+  .overlay_container {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 1),
+      rgba(0, 0, 0, 0)
+    );
+
+    .overlay_text {
+      max-width: 40rem;
+      margin: 0 auto;
+
+      h1 {
+        font-size: 2.5rem;
+        line-height: 5rem;
+        color: whitesmoke;
+        font-family: "Playfair Display", serif;
+        font-weight: 700;
+      }
+
+      h2 {
+        text-align: center;
+        font-size: 1.2rem;
+        color: #fff;
+      }
+
+      .overlay_btn {
+        width: 100%;
+        height: auto;
+        margin-top: 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        button {
+          width: 20rem;
+          height: 4rem;
+          color: black;
+          font-family: "Playfair Display", serif;
+          font-weight: 700;
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}
+
+// styling for firm team
+
+.Firm_team {
+  position: relative;
+  min-height: auto;
+
+  .ruler-left {
+    position: absolute;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+    width: 450px;
+    top: 5.1rem;
+    left: 7%;
+  }
+  .ruler-right {
+    position: absolute;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+    width: 450px;
+    top: 5.1rem;
+    right: 7%;
+  }
+
+  header {
+    color: rgba(0, 0, 0, 0.9);
+    padding-top: 3rem;
+    text-align: center;
+    font-size: 1.5rem;
+
+    h1 {
+      font-family: "Playfair Display", serif;
+      font-weight: 700;
+    }
+  }
+
+  .slider_container {
+    margin-top: 3rem;
+
+    .swiper .swiper-wrapper .swiper-slide {
+      position: relative;
+      width: 400px;
+
+      .image_info {
+        width: 100%;
+        position: absolute;
+        bottom: 12px;
+        color: #fff;
+        cursor: pointer;
+        transition: transform, opacity 200ms ease-in-out;
+
+        h2,
+        h3 {
+          text-align: center;
+        }
+      }
+
+      .image_overlay {
+        width: 100%;
+        height: 100%;
+        background-image: linear-gradient(
+          to left,
+          rgba(0, 67, 116, 0.6) -26.48%,
+          rgba(0, 51, 102, 0.6) 43.529
+        );
+        position: absolute;
+        top: 0;
+        left: 0;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        opacity: 0;
+        transition: opacity 0.25s;
+
+        p {
+          text-align: justify;
+          width: 100%;
+          padding: 0.5rem;
+        }
+      }
+
+      .image_overlay:hover {
+        opacity: 1;
+        cursor: pointer;
+      }
+
+      .image_overlay > * {
+        transform: translateY(40px);
+        transition: 0.25s;
+      }
+
+      .image_overlay:hover > * {
+        transform: translateY(0);
+      }
+
+      .view_bio {
+        margin-top: 0.9rem;
+        padding: 5px;
+        font-weight: 700p;
+      }
+
+      .view_bio:hover {
+        background: var(--primary-color);
+      }
+
+      .image-box {
+        height: 536px;
+      }
+    }
+
+    .swiper-slide:hover .image_info {
+      opacity: 0;
+    }
+
+    .swiper .swiper-button-prev {
+      background: var(--primary-color);
+      left: 0;
+      color: #fefefe;
+      font-size: 1rem;
+      padding: 2rem 1.5rem;
+      border-radius: 0 50px 50px 0;
+      transition: all 200s ease;
+    }
+    .swiper .swiper-button-next {
+      background: var(--primary-color);
+      right: 0;
+      color: #fefefe;
+      font-size: 1rem;
+      padding: 2rem 1.5rem;
+      border-radius: 50px 0 0 50px;
+    }
+  }
+
+  .swiper-slide .image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
+// Styling for testimonials
+
+.testimonials {
+  margin-top: 9rem;
+  position: relative;
+  max-width: 100vw;
+  min-height: 60rem;
+  background: url(/Visions/background3.jpg) center/ cover no-repeat;
+  background-attachment: fixed;
+
+  .testimonial_container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    padding: 8rem 12rem;
+    background-image: linear-gradient(
+      to left,
+      rgba(0, 67, 116, 0.6) -26.48%,
+      rgba(0, 51, 102, 0.6) 73.529
+    );
+
+    .feedback_title h1 {
+      font-family: "Playfair Display", serif;
+      font-weight: 500;
+      color: #fff;
+      font-size: 2rem;
+    }
+
+    .feedback_grid {
+      margin-top: 5rem;
+      width: 100%;
+      height: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 250px 250px;
+      row-gap: 4rem;
+      column-gap: 2rem;
+      color: #fff;
+
+      .feedback {
+        background: var(--primary-color);
+        position: relative;
+        padding: 1rem;
+
+        .quote {
+          font-size: 3rem;
+          position: absolute;
+          top: -40px;
+        }
+
+        .feedback_content {
+          padding-top: 0.5rem;
+          position: absolute;
+          color: #fb8500;
+          height: 2.5rem;
+          bottom: 0.5rem;
+          border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+      }
+    }
+
+    .more_reviews {
+      max-width: 30rem;
+      position: absolute;
+      bottom: 4rem;
+      left: 35%;
+      right: 35%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0.7rem;
+      border-radius: 20px;
+      border: 1px solid #fff;
+
+      .fa-arrow-right {
+        font-size: 1.5rem;
+        color: #fff;
+        margin-left: 0.5rem;
+      }
+    }
+
+    .more_reviews a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 1.2rem;
+      font-family: "Playfair Display", serif;
+      font-weight: 700;
+    }
+
+    .more_reviews a:hover {
+      text-decoration: underline;
+      transition: all 0.3s ease;
+    }
+  }
+}
+
+// Styling for legal news
+
+.legal_news {
+  max-width: 100vw;
+  min-height: auto;
+  padding: 7rem 2rem;
+  margin-bottom: 10rem;
+
+  .top_header {
+    width: 100%;
+    display: flex;
+
+    header {
+      width: 10rem;
+    }
+
+    header h1 {
+      font-family: "Playfair Display", serif;
+      font-weight: 700;
+    }
+
+    .vert_line {
+      width: 100%;
+      height: 1.2rem;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    }
+  }
+
+  .news_grid {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 1rem;
+
+    .headlines {
+      width: 244.33px;
+      height: 152.58px;
+
+      .headline_img {
+        width: 100%;
+        height: 100%;
+      }
+
+      .headline_img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .headline_text {
+        margin-top: 0.5rem;
+      }
+
+      .headline_text a {
+        text-decoration: none;
+        color: black;
+        font-family: "Poppins", sans-serif;
+        font-weight: bold;
+      }
+
+      .headline_text a:hover {
+        text-decoration: underline;
+        color: var(--secondary-color);
+      }
+    }
+  }
+}
+
+// Styling for footer
+
+.footer {
+  max-width: 100vw;
+  min-height: 40rem;
+  background: var(--primary-color);
+  position: relative;
+
+  .top_footer {
+    width: 100%;
+    height: 5rem;
+    background: #1d213d;
+  }
+  .footer_style {
+    width: 90%;
+    height: 3rem;
+    background: #1d213d;
+    position: absolute;
+    left: 5%;
+  }
+
+  .footer_content {
+    width: 100%;
+    padding: 9rem 4rem;
+    color: #fff;
+
+    .footer_nav {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+
+      header {
+        font-family: "Abril Fatface", cursive;
+      }
+
+      .quick_links {
+        line-height: 2rem;
+      }
+
+      .social_follow {
+        line-height: 2rem;
+      }
+      .practice_shortcut {
+        line-height: 2rem;
+      }
+    }
+
+    .footer_nav ul {
+      list-style: none;
+    }
+
+    .footer_nav ul li a {
+      color: #fefefe;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 0.8rem;
+    }
+
+    .office_address {
+      width: 100%;
+      display: flex;
+      line-height: 2rem;
+
+      p {
+        max-inline-size: 12rem;
+        font-weight: bold;
+        font-size: 0.8rem;
+      }
+
+      h3 {
+        font-weight: bold;
+        font-size: 0.8rem;
+      }
+
+      header {
+        font-family: "Abril Fatface", cursive;
+      }
+
+      .branch_office {
+        margin-left: 7rem;
+      }
+    }
+  }
+
+  .terms_of_use {
+    width: 100%;
+    padding: 0 4rem;
+    font-family: "Poppins" sans-serif;
+
+    .terms_links {
+      display: inline-flex;
+
+      span {
+        border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+        padding-bottom: 0.3rem;
+      }
+    }
+
+    .terms_links li {
+      list-style: none;
+      padding-right: 20px;
+    }
+
+    .terms_links li a {
+      color: rgba(255, 255, 255, 0.4);
+      font-size: 0.7rem;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .product {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &amp {
+        color: #fff;
+      }
+    }
+
+    h3 {
+      color: rgba(255, 255, 255, 0.4);
+      font-size: 0.7rem;
+    }
+
+    .terms_container {
+      display: flex;
+      justify-content: space-between;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 2rem 0;
+    }
+  }
+}
+
+
+@media screen and (max-width: 1280px) {
+  .Introduction .intro_container .portfolio {
+    .courtroom_hrs .sub_container {
+      padding: 0 7px;
+    }
+
+    .client_assisited .client_container {
+      padding: 0 1.5rem;
+    }
+
+    .experience .exp_container {
+      padding: 0 1rem;
+    }
+  }
+
+  .testimonials .testimonial_container {
+    padding: 3rem;
+
+    .feedback_grid {
+      grid-template-rows: 300px 300px;
+
+      .feedback .feedback_content {
+        width: 95%;
+        height: 3rem;
+        bottom: 1rem;
+      }
+    }
+  }
+
+  .legal_news .news_grid {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    row-gap: 4rem;
+
+    .headlines {
+      width: 277.33px;
+    }
+  }
+
+  .footer .footer_content .office_address .branch_office {
+    margin-left: 6rem;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  nav {
+    width: 100%;
+
+    .nav_content {
+      .btn {
+        display: block;
+      }
+
+      #menu-btn:checked ~ .nav_links {
+        left: 0%;
+      }
+
+      #menu-btn:checked ~ .btn.menu-btn {
+        display: none;
+      }
+
+      .nav_links {
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        max-width: 350px;
+        background: var(--primary-color);
+        display: block;
+        top: 0;
+        left: -100%;
+        overflow-y: auto;
+        line-height: 50px;
+        padding: 50px 10px;
+        box-shadow: 0 15px 15px rgba(0, 0, 0, 0.15);
+        transition: all 200ms ease-in-out;
+
+        .more-desktop {
+          border-right: none;
+          padding: 0 20px;
+          display: block;
+          font-size: 16px;
+        }
+
+        li {
+          border-top: 1px solid rgba(255, 255, 255, 0.2);
+          border-style: solid;
+          margin: 15px 10px;
+        }
+
+        li a {
+          padding: 0 20px;
+          display: block;
+          font-size: 16px;
+        }
+
+        .custom {
+          width: 100%;
+          padding: 0 20px;
+          border: none;
+
+          .underline:hover {
+            border-bottom: 3px solid #fff;
+            color: #fb8500;
+          }
+        }
+
+        .underline:hover {
+          border-bottom: none;
+          color: #fb8500;
+        }
+
+        ::-webkit-scrollbar {
+          width: 0px;
+        }
+
+        .branch_drop {
+          position: static;
+          opacity: 1;
+          visibility: visible;
+          padding-left: 20px;
+          top: 65px;
+          width: 100%;
+          max-height: 0px;
+          overflow: hidden;
+          transition: all 200ms ease-in-out;
+
+          li {
+            margin: 0px;
+          }
+
+          li a {
+            font-size: 14px;
+            font-weight: bold;
+          }
+        }
+
+        .hist-drop {
+          position: static;
+          opacity: 1;
+          visibility: visible;
+          padding-left: 20px;
+          top: 65px;
+          width: 100%;
+          max-height: 0;
+          overflow: hidden;
+          transition: all 200ms ease-in-out;
+
+          li {
+            margin: 0px;
+          }
+
+          li a {
+            font-size: 14px;
+          }
+        }
+
+        .mega-box {
+          position: static;
+          opacity: 1;
+          visibility: visible;
+          width: 100%;
+          padding: 0 20px;
+          max-height: 0px;
+          overflow: hidden;
+          transition: all 200ms ease-in-out;
+
+          .content {
+            background: var(--primary-color);
+            flex-direction: column;
+            padding: 20px 20px 0 20px;
+
+            .row {
+              width: 100%;
+              margin-bottom: 15px;
+
+              .mega-links {
+                border-left: 0px;
+                padding-left: 0;
+                width: 350px;
+
+                li {
+                  margin: 0 20px;
+                  padding-left: 0;
+                }
+              }
+            }
+
+            .row:nth-child(1),
+            .row:nth-child(2) {
+              border-top: 0px;
+            }
+          }
+        }
+
+        .more_drop {
+          position: static;
+          opacity: 1;
+          visibility: visible;
+          padding-left: 20px;
+          top: 65px;
+          width: 100%;
+          max-height: 0;
+          overflow: hidden;
+          transition: all 200ms ease-in-out;
+
+          li {
+            margin: 0px;
+          }
+
+          li a {
+            font-size: 14px;
+            font-weight: bold;
+          }
+        }
+
+        #showDrop:checked ~ .hist-drop,
+        #showBranch:checked ~ .branch_drop,
+        #showMega:checked ~ .mega-box,
+        #showMore:checked ~ .more_drop {
+          max-height: 100%;
+        }
+
+        .branch-desktop {
+          display: none;
+        }
+
+        .desktop-item {
+          display: none;
+        }
+
+        .more-desktop {
+          display: none;
+        }
+
+        .branch-mobile {
+          color: #fff;
+          display: block;
+          font-size: 16px;
+          font-weight: bold;
+          padding-left: 20px;
+          cursor: pointer;
+          transition: all 200ms ease-in-out;
+        }
+
+        .branch-mobile:hover {
+          color: #fb8500;
+        }
+
+        .mobile-item {
+          color: #fff;
+          display: block;
+          font-size: 16px;
+          font-weight: bold;
+          padding-left: 20px;
+          cursor: pointer;
+          transition: all 200ms ease-in-out;
+        }
+
+        .mobile-item:hover {
+          color: #fb8500;
+        }
+
+        .more-mobile {
+          color: #fff;
+          display: block;
+          font-size: 16px;
+          font-weight: bold;
+          padding-left: 20px;
+          cursor: pointer;
+          transition: all 200ms ease-in-out;
+        }
+
+        .more-mobile:hover {
+          color: #fb8500;
+        }
+      }
+
+      input {
+        display: none;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1115px) {
+  .Landing_page {
+    height: 30.5em;
+    padding: 100px 50px;
+
+    .hero_container .hero_text {
+      h1 {
+        font-size: 2rem;
+      }
+    }
+
+    .hero_container .media_icons {
+      bottom: 0.5rem;
+      margin-top: 0;
+    }
+
+    .hero_container .media_icons a:not(:last-child) {
+      margin-bottom: 0.1rem;
+    }
+  }
+
+  .Introduction {
+    height: 45rem;
+    display: block;
+
+    .intro_About_us {
+      width: 50%;
+      height: 20rem;
+      padding: 2rem 1rem;
+
+      .intro_Caption {
+        font-size: 2rem;
+      }
+
+      .intro_btn {
+        padding: 25px 15px;
+        margin-top: 3rem;
+      }
+
+      .intro_btn a {
+        font-size: 1rem;
+      }
+    }
+
+    .intro_container {
+      margin-top: 6rem;
+      padding: 50px 30px;
+
+      .date {
+        color: black;
+        top: 55%;
+        right: 35%;
+        font-size: 2.5rem;
+      }
+
+      .portfolio {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 200px 200px;
+
+        .courtroom_hrs .sub_container {
+          font-size: 0.7rem;
+          padding: 0 7rem;
+        }
+
+        .client_assisited .client_container {
+          font-size: 0.7rem;
+          padding: 0 8.3rem;
+        }
+
+        .experience .exp_container {
+          font-size: 0.7rem;
+          padding: 0 7.5rem;
+        }
+
+        .awards .award_container {
+          font-size: 0.7rem;
+        }
+      }
+
+      .portfolio .border_right {
+        padding-right: 1.8rem;
+      }
+    }
+  }
+
+  .client_section {
+    padding-top: 4rem;
+
+    .Bull_two {
+      top: 1rem;
+    }
+  }
+
+  .practice_areas .pract_container .area_container {
+    .content_info {
+      width: 50rem;
+    }
+  }
+
+  .Firm_team .ruler-left {
+    width: 220px;
+  }
+
+  .Firm_team .ruler-right {
+    width: 220px;
+  }
+}
+
+@media screen and (max-width: 1040px) {
+  .Introduction .intro_container .portfolio {
+    .courtroom_hrs .sub_container {
+      font-size: 0.7rem;
+      padding: 0 6rem;
+    }
+
+    .client_assisited .client_container {
+      font-size: 0.7rem;
+      padding: 0 7rem;
+    }
+
+    .experience .exp_container {
+      font-size: 0.7rem;
+      padding: 0 6rem;
+    }
+
+    .awards .award_container {
+      font-size: 0.7rem;
+    }
+  }
+
+  .portfolio .border_right {
+    padding-right: 2rem;
+  }
+
+  .legal_news .news_grid {
+    grid-template-columns: 1fr 1fr 1fr;
+    row-gap: 4rem;
+
+    .headlines {
+      width: 277.33px;
+    }
+  }
+
+  .footer .footer_content .office_address .branch_office {
+    margin-left: 3rem;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .footer .footer_content .office_address {
+    margin-top: 3rem;
+
+    .branch_office {
+      margin-left: 16rem;
+    }
+  }
+}
+
+@media screen and (max-width: 970px) {
+  .Introduction .intro_About_us .intro_Caption {
+    font-size: 1.7rem;
+  }
+
+  .Introduction .intro_container .portfolio {
+    .courtroom_hrs .sub_container {
+      padding: 0 5rem;
+    }
+
+    .client_assisited .client_container {
+      padding: 0 6rem;
+    }
+
+    .experience .exp_container {
+      padding: 0 5rem;
+    }
+  }
+
+  .portfolio .border_right {
+    padding-right: 2rem;
+  }
+
+  .client_section {
+    padding-top: 4rem;
+
+    .Bull_two {
+      top: 1%;
+    }
+  }
+
+  .legal_news .news_grid .headlines {
+    width: 266.33px;
+  }
+
+  .footer .footer_content .office_address .branch_office {
+    margin-left: 1rem;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .Introduction .intro_container .portfolio {
+    .courtroom_hrs .sub_container {
+      font-size: 0.5rem;
+      padding: 0 2rem;
+    }
+
+    .client_assisited .client_container {
+      padding: 0 2rem;
+      font-size: 0.5rem;
+    }
+
+    .experience .exp_container {
+      padding: 0 2rem;
+      font-size: 0.5rem;
+    }
+    .awards .award_container {
+      font-size: 0.5rem;
+    }
+  }
+
+  .portfolio .border_right {
+    padding-right: 2rem;
+  }
+}
+
+
+@media screen and (max-width: 820px) {
+  .Introduction .intro_container .portfolio {
+    .courtroom_hrs .sub_container {
+      padding: 0 3rem;
+      font-size: 0.7rem;
+    }
+
+    .client_assisited .client_container {
+      padding: 0 4rem;
+      font-size: 0.7rem;
+    }
+
+    .experience .exp_container {
+      padding: 0 3rem;
+      font-size: 0.7rem;
+    }
+    .awards .award_container {
+      font-size: 0.7rem;
+    }
+  }
+
+  .client_section .client_box {
+    width: 100%;
+  }
+
+  .testimonials {
+    min-height: 70rem;
+
+    .testimonial_container {
+      padding: 2rem;
+
+      .feedback_grid {
+        grid-template-rows: 320px 350px;
+
+        .feedback .feedback_content {
+          height: 3rem;
+          bottom: 1rem;
+        }
+      }
+
+      .more_reviews {
+        bottom: 8rem;
+      }
+    }
+  }
+
+  .legal_news .news_grid {
+    grid-template-columns: 1fr 1fr;
+    row-gap: 4rem;
+
+    .headlines {
+      width: 300.33px;
+    }
+  }
+
+  .footer .footer_content .office_address {
+    margin-top: 3rem;
+
+    .branch_office {
+      margin-left: 9.5rem;
+    }
+  }
+}
+
+@media screen and (max-width: 815px) {
+  .practice_areas {
+    height: 50rem;
+
+    .pract_container .area_container {
+      .content_info {
+        max-width: 768px;
+        padding: 1rem;
+
+        .content_text {
+          max-width: 100%;
+
+          .grid_container {
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 100px 100px 100px;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .footer .footer_content .office_address {
+    margin-top: 3rem;
+
+    .branch_office {
+      margin-left: 8rem;
+    }
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .Landing_page {
+    height: 30.5em;
+    padding: 60px 20px;
+
+    .hero_container .hero_text {
+      p {
+        max-inline-size: 100%;
+      }
+    }
+
+    .hero_container .hero_text h1 {
+      font-size: 2rem;
+    }
+
+    .hero_container .media_icons {
+      bottom: 0.5rem;
+      margin-top: 0;
+    }
+
+    .hero_container .media_icons a:not(:last-child) {
+      margin-bottom: 0.1rem;
+    }
+  }
+
+  .Introduction {
+    max-width: 100vw;
+    position: relative;
+    height: 35rem;
+    display: block;
+
+    .intro_About_us {
+      width: 50%;
+      color: #fff;
+      background: black;
+      height: 20rem;
+      padding: 2rem 0.5rem;
+
+      .intro_Caption {
+        font-size: 1.5rem;
+      }
+
+      .intro_btn {
+        padding: 15px 8px;
+        margin-top: 3rem;
+      }
+
+      .intro_btn a {
+        font-size: 1rem;
+      }
+    }
+
+    .intro_container {
+      width: 100%;
+      margin-top: 4rem;
+      padding: 50px 10px;
+
+      .date {
+        color: black;
+        position: absolute;
+        top: 65%;
+        right: 35%;
+        font-size: 1.7rem;
+      }
+
+      .portfolio {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 150px 150px;
+        grid-gap: 2px;
+
+        .courtroom_hrs .sub_container {
+          font-size: 0.5rem;
+          padding: 0 1rem;
+        }
+
+        .client_assisited .client_container {
+          font-size: 0.5rem;
+          padding: 0 2rem;
+        }
+
+        .experience .exp_container {
+          font-size: 0.5rem;
+          padding: 0 1.1rem;
+        }
+
+        .awards .award_container {
+          font-size: 0.5rem;
+        }
+      }
+    }
+  }
+
+  .client_section {
+    padding-top: 7rem;
+
+    .Bull_two {
+      top: 7%;
+      left: 45%;
+    }
+
+    h1 {
+      font-size: 1.7rem;
+    }
+
+    .client_box {
+      margin: 0;
+      width: 100%;
+      margin-top: 50px;
+
+      .key-points .keypoints-title .keypoints-btn {
+        justify-content: flex-start;
+        text-align: left;
+        font-size: 1.3rem;
+        padding: 1rem;
+      }
+    }
+  }
+
+  .practice_areas {
+    height: 53rem;
+
+    .pract_container {
+      width: 100%;
+      height: auto;
+
+      .Top_Area {
+        width: 100%;
+        padding-top: 5rem;
+
+        .Bull_three {
+          top: 40px;
+          left: 43%;
+        }
+
+        .Top_Area_Text {
+          width: 100%;
+          padding: 1rem;
+          text-align: center;
+
+          h1 {
+            font-size: 1.7rem;
+            text-align: center;
+            color: #fff;
+          }
+        }
+      }
+
+      .area_container {
+        .content_info {
+          width: 100%;
+
+          .content_header {
+            padding-left: 1.5rem;
+          }
+
+          .content_text {
+            width: 100%;
+            height: auto;
+
+            .grid_container {
+              grid-template-columns: 1fr 1fr;
+              grid-template-rows: 100px 100px 100px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .call_back .overlay_container .overlay_text {
+    padding: 1rem;
+
+    h1 {
+      font-size: 1.5rem;
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 1rem;
+    }
+  }
+
+  .Firm_team header h1 {
+    font-size: 1.5rem;
+  }
+
+  .Firm_team .ruler-left {
+    width: 10rem;
+    left: 0;
+    top: 11%;
+  }
+
+  .Firm_team .ruler-right {
+    width: 10rem;
+    right: 0;
+    top: 11%;
+  }
+
+  .testimonials {
+    min-height: 96rem;
+
+    .testimonial_container {
+      padding: 0;
+
+      .feedback_grid {
+        margin-top: 8rem;
+        grid-template-columns: 1fr;
+        gap: 4rem;
+        grid-template-rows: 250px 250px 250px 250px;
+      }
+
+      .more_reviews {
+        width: 250px;
+        bottom: 1rem;
+        border: 1px solid #fff;
+        left: 24%;
+        right: 25%;
+      }
+
+      .feedback_title h1 {
+        padding: 2rem 0;
+        text-align: center;
+      }
+    }
+  }
+
+  .legal_news {
+    padding: 1rem;
+    margin-top: 10rem;
+
+    .top_header {
+      width: 100%;
+      display: flex;
+
+      header {
+        width: 12rem;
+      }
+    }
+
+    .news_grid {
+      margin-top: 2rem;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+
+      .headlines {
+        width: 100%;
+        display: flex;
+        padding-top: 0.5rem;
+
+        .headline_text {
+          margin-top: 0;
+          margin-left: 0.5rem;
+        }
+      }
+
+      #top {
+        border-top: 1px solid rgba(0, 0, 0, 0.2);
+      }
+    }
+  }
+
+  .footer .footer_content {
+    padding: 9rem 2rem;
+
+    .footer_nav {
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    .office_address {
+      margin-top: 2rem;
+
+      .branch_office {
+        margin-left: 3rem;
+      }
+    }
+  }
+
+  .footer .terms_of_use {
+    padding: 0 2rem;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .footer .footer_content .office_address {
+    margin-top: 3rem;
+
+    .branch_office {
+      margin-left: 4rem;
+    }
+  }
+}
+
+@media screen and (max-width: 470px) {
+  .Landing_page {
+    height: 30.5em;
+    padding: 60px 20px;
+
+    .hero_container .hero_text {
+      p {
+        max-inline-size: 100%;
+        font-size: 0.9rem;
+      }
+    }
+
+    .hero_container .hero_text h1 {
+      font-size: 1.5rem;
+    }
+
+    .hero_container .media_icons {
+      bottom: 0.5rem;
+      margin-top: 0;
+    }
+
+    .hero_container .media_icons a:not(:last-child) {
+      margin-bottom: 0.1rem;
+    }
+  }
+
+  .Introduction {
+    height: 65rem;
+  }
+
+  .Introduction .intro_container .portfolio {
+    grid-template-columns: 1fr;
+
+    .courtroom_hrs .sub_container {
+      font-size: 0.7rem;
+      padding: 0 2rem;
+    }
+
+    .client_assisited .client_container {
+      font-size: 0.7rem;
+      padding: 0 3.5rem;
+    }
+
+    .experience .exp_container {
+      font-size: 0.7rem;
+      padding: 0 3rem;
+    }
+
+    .awards .award_container {
+      font-size: 0.7rem;
+    }
+  }
+
+  .testimonials {
+    min-height: 110rem;
+
+    .testimonial_container {
+      padding: 0;
+
+      .feedback_grid {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+        grid-template-rows: 300px 300px 350px 300px;
+
+        .feedback .feedback_content {
+          height: 3rem;
+          bottom: 1rem;
+        }
+      }
+
+      .more_reviews {
+        width: 250px;
+        bottom: 1rem;
+        border: 1px solid #fff;
+        left: 19%;
+        right: 25%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 414px) {
+  .Introduction .intro_container .date {
+    top: 35%;
+  }
+
+  .practice_areas {
+    height: 63rem;
+    .pract_container .area_container {
+      .content_info {
+        .content_text {
+          width: 100%;
+
+          .grid_container {
+            grid-template-columns: 1fr;
+            grid-template-rows: auto;
+          }
+        }
+      }
+    }
+  }
+
+  .Firm_team header h1 {
+    font-size: 1.3rem;
+  }
+
+  .Firm_team .ruler-left {
+    width: 120px;
+    left: 0;
+    top: 11%;
+  }
+
+  .Firm_team .ruler-right {
+    width: 120px;
+    right: 0;
+    top: 11%;
+  }
+
+  .footer {
+    .footer_content {
+      padding: 9rem 1.2rem;
+
+      .office_address .branch_office {
+        margin-left: 2rem;
+      }
+    }
+
+    .terms_of_use {
+      padding: 0 1rem;
+    }
+
+    .terms_of_use .product h3 {
+      max-inline-size: 9rem;
+    }
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .legal_news .top_header header h1 {
+    width: 8.5rem;
+  }
+}
+@media screen and (max-width: 375px) {
+  .legal_news .top_header header h1 {
+    width: 8.5rem;
+  }
+}
+
+@media screen and (max-width: 365px) {
+  .Landing_page {
+    padding: 40px 10px;
+  }
+}
